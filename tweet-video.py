@@ -52,14 +52,6 @@ while True:
 # upload subtitle file
 subtitle_media_id = api.UploadMediaChunked(srt_filename, media_category='Subtitles')
 
-# check status every 3 seconds until success
-while True:
-  subtitle_status = get_status(video_media_id, api)
-  print(subtitle_status)
-  if subtitle_status == 'succeeded':
-    break
-  time.sleep(3)
-
 # attach subtitles to video
 api.PostMediaSubtitlesCreate(video_media_id, subtitle_media_id, 'en', 'English')
 

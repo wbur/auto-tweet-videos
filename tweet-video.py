@@ -1,12 +1,5 @@
 #!/usr/bin/python
 
-# Make sure you first get the python-twitter library
-# https://github.com/bear/python-twitter
-# But in order to get needed functionality, get the master branch of the package
-# pip install git+git://github.com/bear/python-twitter.git
-#See: https://codeinthehole.com/tips/using-pip-and-requirementstxt-to-install-from-the-head-of-a-github-branch/#:~:text=The%20python%20package%20installer%20pip%20can%20be%20used,install%20from%20the%20HEAD%20of%20the%20master%20branch.
-# And then fill out the Twitter keys below
-
 import twitter
 import json
 import time

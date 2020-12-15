@@ -38,9 +38,9 @@ api = twitter.Api(consumer_key, consumer_secret, access_token, access_token_secr
 video_filename = 'path/to/video.mp4'
 srt_filename = '/path/to/transcript.srt'
 
+# start uploading video
 video_media_id = api.UploadMediaChunked(video_filename, media_category='TweetVideo')
 
-# upload video
 # check status every 3 seconds until success
 while True:
   video_status = get_status(video_media_id, api)
@@ -48,9 +48,10 @@ while True:
   if video_status == 'succeeded':
     break
   time.sleep(3)
+  
+# upload subtitle file
 subtitle_media_id = api.UploadMediaChunked(srt_filename, media_category='Subtitles')
 
-# upload subtitle
 # check status every 3 seconds until success
 while True:
   subtitle_status = get_status(video_media_id, api)
